@@ -4,10 +4,6 @@ Rekap hasil visualisasi domain 3 (d03) WRF-ARW yang dicocokkan per-jam dengan ou
 (`CHRTOUT`, `RTOUT`, `GWOUT`, `LDASOUT`), sebagai bukti keterkaitan antara kondisi atmosfer (WRF)
 dan respons hidrologi permukaan (WRF-Hydro) selama dampak Siklon Cempaka di pesisir selatan Jawa.
 
-> Taruh semua file gambar hasil run notebook di folder `images/` (buat foldernya di samping README
-> ini), lalu isi nama file di setiap slot `![...](images/NAMA_FILE.png)` di bawah — kalau nama filenya
-> beda tinggal ganti path-nya saja, strukturnya sudah disiapkan sesuai urutan analisis.
-
 ---
 
 ## 1. Ringkasan Simulasi
@@ -44,7 +40,8 @@ Urutan di bawah disusun dari **pemicu atmosferik (WRF)** → **respons hidrologi
 
 Snapshot per-jam yang menampilkan sisi WRF dan WRF-Hydro berdampingan dalam satu figure, domain 3, saat siklon berada dekat puncak intensitasnya.
 
-![Panel 6 subplot WRF vs WRF-Hydro](images/snap_6x6_perbandingan_WRF_VS_WRFHYDRO.png)
+<img width="1987" height="1083" alt="snap 6x6 perbandingan WRF VS WRFHYDRO" src="https://github.com/user-attachments/assets/41101ebb-f605-4388-a6fb-346f1cc90f8a" />
+
 
 **Yang dibuktikan:** pusat sirkulasi angin & sel hujan konvektif dari WRF (kiri atas & tengah atas) muncul bersamaan dengan naiknya debit sungai (`CHRTOUT`, kiri bawah) dan kelembaban tanah (`LDASOUT`, tengah bawah) di area yang sama — genangan permukaan (`RTOUT`, kanan bawah) baru muncul setelah sel hujan terbentuk, konsisten dengan urutan fisis hujan → runoff → genangan.
 
@@ -54,7 +51,8 @@ Snapshot per-jam yang menampilkan sisi WRF dan WRF-Hydro berdampingan dalam satu
 
 Panel 2×2 yang di-zoom ke pesisir selatan Jawa, mencakup 4 titik tinjau, saat intensitas hujan sedang tinggi.
 
-![Fokus dampak hujan dan indikasi banjir](images/fokus_dampak_hujan_dan_indikasi_banjir_WRFHYDRO.png)
+<img width="1776" height="1232" alt="fokus dampak hujan dan indikasi banjir WRFHYDRO" src="https://github.com/user-attachments/assets/237230d3-e938-486b-b5fe-555bab1005fe" />
+
 
 **Yang dibuktikan:** klaster hujan intensitas tinggi (panel 1, WRF) di sekitar Kebumen–Purworejo–DIY sejalan spasial dengan genangan permukaan RTOUT (panel 3) dan indikator status genangan (panel 4, kategori ringan/waspada/banjir) yang justru paling padat di klaster wilayah yang sama — bukti langsung bahwa output WRF-Hydro merespons pola hujan WRF, bukan pola acak.
 
@@ -64,7 +62,8 @@ Panel 2×2 yang di-zoom ke pesisir selatan Jawa, mencakup 4 titik tinjau, saat i
 
 Panel 1×3 pada jam sesudah puncak hujan, menunjukkan bagaimana respons hidrologi berkembang/menurun.
 
-![Fokus hidrologi pesisir selatan Jawa](images/fokus_hidrologi_banjir.png)
+<img width="2189" height="608" alt="fokus hidrologi banjir" src="https://github.com/user-attachments/assets/0bfb9018-06b5-48de-8114-a3fd6c34968e" />
+
 
 **Yang dibuktikan:** dengan timestamp yang sudah dicocokkan ke jam WRF (per-jam, lihat bagian 8 notebook), pola genangan & status banjir di jam ini bisa dibandingkan langsung terhadap timestamp hujan WRF terkait (mis. dari 3.2) untuk melihat jeda waktu (lag) antara puncak hujan dan puncak genangan.
 
@@ -74,7 +73,8 @@ Panel 1×3 pada jam sesudah puncak hujan, menunjukkan bagaimana respons hidrolog
 
 Snapshot jaringan sungai dengan intensitas debit air pada jaringan streams.shp, di jam sesudah kejadian hujan utama.
 
-![Intensitas aliran sungai](images/streamflow.png)
+<img width="1281" height="807" alt="streamflow" src="https://github.com/user-attachments/assets/e80b8136-0beb-425a-b706-d2f0eefc009f" />
+
 
 **Yang dibuktikan:** segmen sungai dengan debit tertinggi (kuning-hijau, mendekati skala atas colorbar) terkonsentrasi di sekitar Cilacap dan anak sungai yang menampung aliran dari area hujan lebat pada 3.1–3.2 — memperlihatkan propagasi debit dari hulu (area hujan) ke hilir (pesisir) sesuai arah aliran sungai riil.
 
@@ -92,14 +92,3 @@ Snapshot jaringan sungai dengan intensitas debit air pada jaringan streams.shp, 
 **Catatan penyusunan laporan:** dengan urutan 3.1 → 3.4 di atas, pembuktian keterkaitan WRF–WRF-Hydro dibangun secara kronologis-fisis (hujan → tanah jenuh → runoff → genangan/banjir → debit sungai ke hilir), bukan sekadar menampilkan gambar berdampingan.
 
 ---
-
-## 5. Daftar Isi Folder `images/` yang Perlu Diisi
-
-| Nama file (isi sendiri) | Dipakai di bagian |
-|---|---|
-| `snap_6x6_perbandingan_WRF_VS_WRFHYDRO.png` | 3.1 |
-| `fokus_dampak_hujan_dan_indikasi_banjir_WRFHYDRO.png` | 3.2 |
-| `fokus_hidrologi_banjir.png` | 3.3 |
-| `streamflow.png` | 3.4 |
-
-Kalau mau menambah snapshot jam lain (misal untuk animasi/GIF hasil bagian 10 notebook), tinggal duplikasi format section 3.x di atas dengan slot gambar baru.
